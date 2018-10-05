@@ -1,0 +1,25 @@
+<div class="container">	
+  <form #userData = "ngForm" (ngSubmit) = "login(userData.value)">
+    <div class="form-group">
+      <input class="form-control" type="email" placeholder="email"name="email"
+      #email="ngModel" id="email" ngModel required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+    </div>
+    <div class="alert alert-danger"  *ngIf="!email.valid  && email.touched" >
+      <span *ngIf="email.errors.required"><p>champ obligatoire</p> </span>
+      <span *ngIf="email.errors.pattern">l'email doit avoir la forme "xxxxx@yyyy.zz"</span>
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="password" placeholder="mdp"name="mdp"
+      id="mdp" ngModel required #mdp="ngModel" minlength="6">
+    </div>
+    
+    <div class="alert alert-danger"  *ngIf="!mdp.valid  && mdp.touched" >
+      <span *ngIf="mdp.errors.required"><p>champ obligatoire</p> </span>
+      <span *ngIf="mdp.errors.minlength">le mot de passe doit contenir au moins 6 caracteres</span>
+    </div>
+    <div class="form-check">
+        <input class="btn btn-primary" type="submit" value="Connexion" [disabled]="!userData.form.valid">
+    </div>
+    
+  </form>
+</div>

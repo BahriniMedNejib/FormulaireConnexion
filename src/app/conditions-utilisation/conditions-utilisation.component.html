@@ -1,0 +1,20 @@
+<p>
+  <a class="btn btn-warning btn-lg" routerLink="/login">Retour</a>
+</p>
+<h2>Conditions d'utilisations: </h2>
+<p>Lorem ipsum dolor sit amet, massa mollis lorem varius habitant, nisl dolor egestas,
+   mauris eget duis, vel pellentesque, eget proin. Bibendum risus mi, turpis aenean
+    cras adipiscing viverra eget, massa massa elementum, magna adipiscing, habitant 
+    vitae quis faucibus accumsan sed semper. Penatibus dictum in justo sit inceptos consectetuer, 
+    ac aliquam porttitor sodales tempora pede, nec justo, wisi lacus vivamus arcu rutrum nonummy.
+    Lobortis ut nec non, velit vestibulum sed, fames facilisis pretium mi. Vestibulum pellentesque 
+    varius, dolor nulla morbi in enim. Nullam integer nullam donec libero tellus, nec ac dolor,
+    proin accumsan vitae eu eu eu. Semper sed ut. Ac pretium magna. Ut consectetuer tellus inceptos
+    justo, ante mi auctor, euismod ut donec facilisis purus pharetra phasellus, tristique magnis,
+    dapibus nec nec facilisi.</p>
+<div>
+    <input type="checkbox" name="acceptation" id="acceptation" #acceptation="ngModel" ngModel required>
+    J'accepte
+
+</div>
+<input class="btn btn-primary" type="submit" value="Valider" [disabled]="acceptation.invalid" (click)="validation()">
